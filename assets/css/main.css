@@ -1,311 +1,149 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600");
-
-/* Basic */
-@-ms-viewport {
-  width: device-width; }
-body {
-  -ms-overflow-style: scrollbar; }
-
-@media screen and (max-width: 480px) {
-  html, body {
-    min-width: 320px; } }
-
-html {
-  box-sizing: border-box; }
-
-*, *:before, *:after {
-  box-sizing: inherit; }
-
-.image.fit img {
-  height: auto;
-}
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
 
 body {
-  background: #f7f7f7; }
-  body.is-preload *, body.is-preload *:before, body.is-preload *:after {
-    animation: none !important;
-    transition: none !important; }
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym,
-address, big, cite, code, del, dfn, em, img, ins, kbd, q, s,
-samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
-dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table,
-caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
-details, embed, figure, figcaption, footer, header, hgroup, menu,
-nav, output, ruby, section, summary, time, mark, audio, video {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  background: #f7f7f7;
+  line-height: 1.6;
   margin: 0;
   padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
+}
 
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block; }
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
-body {
-  line-height: 1.65; }
-
-ol, ul {
-  list-style: none; }
-
-blockquote, q {
-  quotes: none; }
-  blockquote:before, blockquote:after, q:before, q:after {
-    content: '';
-    content: none; }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-
-body {
-  -webkit-text-size-adjust: none; }
-
-mark {
-  background-color: transparent;
-  color: inherit; }
-
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0; }
-
-input, select, textarea {
-  appearance: none; }
-
-/* Typography */
-html {
-  font-size: 13pt; }
-  @media screen and (max-width: 1680px) {
-    html {
-      font-size: 11pt; } }
-  @media screen and (max-width: 980px) {
-    html {
-      font-size: 12pt; } }
-  @media screen and (max-width: 480px) {
-    html {
-      font-size: 11pt; } }
-
-body, input, select, textarea {
-  font-family: "Raleway", Arial, Helvetica, sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
-  color: #333; }
-
-a {
-  transition: color 0.2s ease-in-out;
-  text-decoration: none;
-  color: #0066cc; }
-  a:hover {
-    text-decoration: underline; }
-
-strong, b {
-  font-weight: 600; }
-
-em, i {
-  font-style: italic; }
-
-p {
-  margin: 0 0 1.5rem 0; }
-
-header.special {
-  text-align: center;
-  margin-bottom: 2rem; }
-  header.special p {
-    max-width: 75%;
-    margin-left: auto;
-    margin-right: auto; }
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  line-height: 1.5;
-  margin: 0 0 1rem 0; }
-
-h1 {
-  font-size: 2.5rem; }
-
-h2 {
-  font-size: 2rem; }
-
-h3 {
-  font-size: 1.5rem; }
-
-h4 {
-  font-size: 1.25rem; }
-
-h5 {
-  font-size: 1rem; }
-
-h6 {
-  font-size: 0.875rem; }
-
-blockquote {
-  border-left: 4px solid #ddd;
-  font-style: italic;
-  margin: 0 0 1.5rem 0;
-  padding: 0.5rem 1rem; }
-
-code {
-  border-radius: 4px;
-  background: #f0f0f0;
-  padding: 0.25rem 0.5rem;
-  font-family: "Courier New", monospace; }
-
-pre {
-  font-family: "Courier New", monospace;
-  background: #f0f0f0;
-  padding: 1rem;
-  overflow-x: auto; }
-
-hr {
-  border: 0;
-  border-bottom: 1px solid #ddd;
-  margin: 2rem 0; }
-
-input, select, textarea {
-  color: #555;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 0.5rem; }
-
-input:focus, select:focus, textarea:focus {
-  border-color: #0066cc;
-  outline: none; }
-
-label {
-  font-weight: 600;
-  margin: 0 0 0.5rem 0; }
-
-.table-wrapper {
-  overflow-x: auto; }
-
-table {
+#header {
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
   width: 100%;
-  margin-bottom: 1.5rem;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  overflow: hidden; }
+  z-index: 1000;
+}
 
-table th, table td {
-  padding: 0.75rem;
-  text-align: left;
-  border-bottom: 1px solid #ddd; }
+#header .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
 
-table th {
-  background-color: #f7f7f7;
-  font-weight: 600; }
+#header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
 
-table tbody tr:nth-child(even) {
-  background-color: #f0f0f0; }
+#nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
 
-/* Buttons */
-.button {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
-  background: #0066cc;
-  color: #fff;
-  font-weight: 600;
-  text-align: center;
+#nav ul li {
+  margin-left: 1.5rem;
+}
+
+#nav ul li a {
+  color: #333;
   text-decoration: none;
-  transition: background 0.3s ease; }
-  .button:hover {
-    background: #005bb5; }
+  font-weight: 500;
+  transition: color 0.3s;
+}
 
-/* Highlights */
+#nav ul li a:hover {
+  color: #007bff;
+}
+
+#main {
+  flex: 1;
+  padding: 2rem 2rem;
+}
+
+#main .inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#main header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+#main header p {
+  font-size: 1.25rem;
+  color: #666;
+}
+
 .highlights {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  margin: 2rem 0; }
-  .highlights > div {
-    flex: 1 1 calc(33.333% - 1rem);
-    background: #fff;
-    padding: 2rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
-  .highlights .icon {
-    font-size: 2rem;
-    margin-bottom: 1rem; }
+  gap: 2rem;
+}
 
-@media screen and (max-width: 980px) {
-  .highlights > div {
-    flex: 1 1 calc(50% - 1rem); } }
-
-@media screen and (max-width: 736px) {
-  .highlights > div {
-    flex: 1 1 100%; } }
-
-/* Main Content */
-#main {
+.highlights article {
   background: #fff;
-  border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 2rem;
-  margin-bottom: 2rem; }
+  border-radius: 8px;
+  flex: 1 1 calc(33.333% - 2rem);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-.inner {
-  max-width: 75rem;
-  margin: 0 auto;
-  padding: 0 1.5rem; }
+.highlights article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
 
-.wrapper {
-  padding: 4rem 0; }
+.highlights article header h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
 
-/* Header */
-#header {
-  background: #0066cc;
-  color: #fff;
-  padding: 1rem 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000; }
-  #header .logo {
-    font-weight: 700;
-    font-size: 1.25rem;
-    padding: 0 1rem; }
-  #header nav a {
-    color: #fff;
-    padding: 0 1rem;
-    text-decoration: none; }
-    #header nav a:hover {
-      text-decoration: underline; }
+.highlights article p {
+  color: #666;
+}
 
-@media screen and (max-width: 736px) {
-  #header nav a {
-    padding: 0 0.5rem; } }
-
-@media screen and (max-width: 480px) {
-  #header {
-    padding: 0.5rem 0; } }
-
-/* Footer */
 #footer {
   background: #333;
   color: #fff;
   padding: 2rem 0;
-  text-align: center; }
-  #footer a {
-    color: #fff;
-    text-decoration: underline; }
-    #footer a:hover {
-      color: #ddd; }
+  text-align: center;
+}
 
-/* Media Queries */
-@media screen and (max-width: 1280px) {
-  .wrapper {
-    padding: 2rem 0; } }
+#footer .inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-@media screen and (max-width: 980px) {
-  .wrapper {
-    padding: 1rem 0; } }
+#footer p {
+  margin: 0;
+}
 
-@media screen and (max-width: 736px) {
-  .wrapper {
-    padding: 0.5rem 0; } }
+#footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+#footer ul li {
+  margin: 0 0.5rem;
+}
+
+#footer ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.25rem;
+  transition: color 0.3s;
+}
+
+#footer ul li a:hover {
+  color: #007bff;
+}
